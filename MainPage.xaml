@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="firsttestapp.MainPage">
+    <!--xmlns:viewmodel="clr-namespace:firsttestapp.ViewModel"-->
+             <!--x:DataType="viewmodel:MainViewModel">-->
+<ContentPage.Resources>
+        <Style Class="button" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Red"  />
+            <Setter Property="TextColor" Value="White"  />
+            <Setter Property="HeightRequest" Value="75"  />
+            <Setter Property="WidthRequest" Value="250"  />
+            <Setter Property="FontSize" Value="36"  />
+        </Style>
+        <Style Class="Header" TargetType="Label">
+            <Setter Property="TextColor" Value="Red"  />
+            <Setter Property="FontSize" Value="36"  />
+        </Style>
+
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <!--move image to image folder-->
+            <Image
+                Source="roilogo.png"
+                HorizontalOptions="Center"
+                WidthRequest="350"
+                />
+            
+            <Label
+                x:Name="dashboardLabel"
+                Text="Dashboard"
+                HorizontalOptions="Center"
+                class="Header"/>
+            
+            <Button
+                x:Name="ViewStaff"
+                Text="View Staff"
+                class="button"
+                Clicked="ViewStaffClicked"
+                HorizontalOptions="Center"
+                />
+            <Button
+                x:Name="HRTools"
+                Text="HR Tools"
+                class="button"
+                Clicked="ViewHRToolsClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="Settings"
+                Text="Settings"
+                class="button"
+                Clicked="ONSettingsClicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="Loginout"
+                Text="Login out"
+                Clicked="LoginOutClicked"
+                class="button"
+                HorizontalOptions="Center" />
+            <CollectionView ItemsSource="{Binding Items}" />
+            <!--<DataTemplate x:DataType="{x:Type x:String}" />-->
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

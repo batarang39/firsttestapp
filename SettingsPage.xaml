@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="firsttestapp.SettingsPage"
+             Title="SettingsPage">
+    <ScrollView>
+        <VerticalStackLayout>
+        <Label Text="Settings Page" />
+        <Label
+            x:Name="rotationLabel"
+            Text="Brightness"
+            Rotation="{Binding Source={x:Reference slider},Path=Value}"
+            HorizontalOptions="Center"
+            />
+        <Slider
+            x:Name="slider"
+            Minimum="0"
+            Maximum="360"
+            Value="0"
+            HorizontalOptions="Center"
+            />
+                
+        <Label
+            x:Name="displayLabel"
+            
+            Text="{Binding Source={x:Reference slider},
+            Path=Value,
+            StringFormat='the slider value is {0:0f}'}"
+            
+            HorizontalOptions="Center"
+            />
+            <TableView Intent="Settings">
+                <TableRoot>
+                    <TableSection>
+                        <SwitchCell Text="some"
+                                    On="False"
+                                    OnChanged="onThemeSwitchToggled"/>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+        <Label
+            x:Name="_rotationLabel"
+            Text="Font Size"
+            Rotation="{Binding Source={x:Reference _stepper},Path=Value}"
+            HorizontalOptions="Center"
+            />
+        <Stepper
+            x:Name="_stepper"
+            Minimum="0"
+            Maximum="360"
+            Value="0"
+            HorizontalOptions="Center"
+            />
+
+            <Label
+            x:Name="_displayLabel"
+
+            Text="{Binding Source={x:Reference _stepper},
+            Path=Value,
+            StringFormat='the slider value is {0:0f}'}" />
+
+            <HorizontalStackLayout 
+                HorizontalOptions="Center"
+                Margin="10,10,10,10">
+        <Button
+            x:Name="saving"
+            Text="Save"
+            Clicked="SavePreferences"
+            HorizontalOptions="Center"
+            Padding="50,25,50,25"
+            BackgroundColor="red"
+            />
+        <Button
+            x:Name="Apply"
+            Text="Apply"
+            Clicked="ApplyPreferences"
+            HorizontalOptions="Center"
+            Padding="50,25,50,25"
+            BackgroundColor="red" />
+            </HorizontalStackLayout>
+
+            <Label Text="Theme" FontAttributes="Bold"/>
+            <Picker x:Name="ThemePicker">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Light</x:String>
+                        <x:String>Dark</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+<Button
+    x:Name="setFont"
+    Text="set font"
+    Clicked="setfont"
+    HorizontalOptions="Center"
+    Padding="50,25,50,25"
+    BackgroundColor="red" />
+
+
+
+        </VerticalStackLayout>
+</ScrollView>
+</ContentPage>
