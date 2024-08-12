@@ -43,8 +43,8 @@
                 Text="View Staff"
                 class="button"
                 Clicked="ViewStaffClicked"
-                HorizontalOptions="Center"
-                />
+                HorizontalOptions="Center"/>
+            
             <Button
                 x:Name="HRTools"
                 Text="HR Tools"
@@ -65,7 +65,7 @@
                 Clicked="LoginOutClicked"
                 class="button"
                 HorizontalOptions="Center" />
-            <CollectionView ItemsSource="{Binding Items}" />
+            <!--<CollectionView ItemsSource="{Binding Items}" />-->
             <!--<DataTemplate x:DataType="{x:Type x:String}" />-->
         </VerticalStackLayout>
     </ScrollView>

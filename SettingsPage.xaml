@@ -3,16 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="firsttestapp.SettingsPage"
              Title="SettingsPage">
+    <ContentPage.Resources>
+        <Style Class="button" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Red"  />
+            <Setter Property="TextColor" Value="White"  />
+            <Setter Property="HeightRequest" Value="75"  />
+            <Setter Property="WidthRequest" Value="250"  />
+            <Setter Property="FontSize" Value="14"  />
+            <Setter Property="HorizontalOptions" Value="Center" />
+            <Setter Property="Padding" Value="50,25,50,25" />
+        </Style>
+
+    </ContentPage.Resources>
+    
+    
     <ScrollView>
         <VerticalStackLayout>
         <Label Text="Settings Page" />
-        <Label
+        <!--<Label
             x:Name="rotationLabel"
             Text="Brightness"
             Rotation="{Binding Source={x:Reference slider},Path=Value}"
             HorizontalOptions="Center"
-            />
-        <Slider
+            />-->
+        <!--<Slider
             x:Name="slider"
             Minimum="0"
             Maximum="360"
@@ -34,7 +48,7 @@
                     <TableSection>
                         <SwitchCell Text="some"
                                     On="False"
-                                    OnChanged="onThemeSwitchToggled"/>
+                                   />
                     </TableSection>
                 </TableRoot>
             </TableView>
@@ -43,8 +57,8 @@
             x:Name="_rotationLabel"
             Text="Font Size"
             Rotation="{Binding Source={x:Reference _stepper},Path=Value}"
-            HorizontalOptions="Center"
-            />
+            HorizontalOptions="Center"-->
+            <!--/>-->
         <Stepper
             x:Name="_stepper"
             Minimum="0"
@@ -63,21 +77,17 @@
             <HorizontalStackLayout 
                 HorizontalOptions="Center"
                 Margin="10,10,10,10">
-        <Button
+        <!--<Button
             x:Name="saving"
             Text="Save"
             Clicked="SavePreferences"
-            HorizontalOptions="Center"
-            Padding="50,25,50,25"
-            BackgroundColor="red"
+            class="button"
             />
-        <Button
+                <Button
             x:Name="Apply"
             Text="Apply"
             Clicked="ApplyPreferences"
-            HorizontalOptions="Center"
-            Padding="50,25,50,25"
-            BackgroundColor="red" />
+            class="button"/>-->
             </HorizontalStackLayout>
 
             <Label Text="Theme" FontAttributes="Bold"/>
@@ -89,14 +99,57 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-<Button
+                    <!--<Button
     x:Name="setFont"
     Text="set font"
     Clicked="setfont"
-    HorizontalOptions="Center"
-    Padding="50,25,50,25"
-    BackgroundColor="red" />
+    class="button"  />-->
+                    <Label >ENTER YOUR NAME</Label>
+            <Entry  x:Name="NameEntry"></Entry>
+            <Label >Change Theme</Label>
+            <Switch x:Name="togTheme"  
+                    Toggled="OnThemeSwitchToggled"
+                    BackgroundColor="DimGrey" />
 
+            <Label >ENTER YOUR AGE</Label>
+            <Entry  x:Name="AgeEntry"></Entry>
+
+            <!--Age to be a birthday year/Confirm DOB VS text entry input-->
+
+            <Label >ENTER SOME NEW DATA</Label>
+            <Entry  x:Name="someEntry"></Entry>
+
+            <!-- Brightness Slider -->
+            <Label Text="Brightness" />
+            <Slider x:Name="brightnessSlider"
+                    Minimum="0"
+                    Maximum="1"
+                    Value="{Binding Brightness}"
+                    Grid.Row="5"
+                    Grid.Column="1"/>
+
+            <!-- Font Size Slider -->
+            <Label Text="Font Size"  />
+            <Slider x:Name="fontSizeSlider"
+                    Minimum="10"
+                    Maximum="30"
+                    Value="{Binding FontSize}"
+                    Grid.Row="7"
+                    Grid.Column="1" />
+
+            <!-- Font Family Picker -->
+            <Label Text="Font Family" />
+            <Picker x:Name="fontFamilyPicker"
+                    ItemsSource="{Binding FontFamilies}"
+                    SelectedItem="{Binding SelectedFontFamily}"
+                    Grid.Row="9"
+                    Grid.Column="1" />
+
+            <!-- Save Button -->
+            <Button Grid.Row="10"
+                    Grid.Column="1"
+                    Clicked="SaveSettings_Clicked"
+                    Text="SAVE USER SETTINGS"/>
 
 
         </VerticalStackLayout>

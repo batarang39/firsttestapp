@@ -19,7 +19,8 @@ namespace firsttestapp
             //}
             private void ViewStaffClicked(object sender, EventArgs e)
             {
-                DisplayAlert("View Staff", "View Staff", "OK");
+            DisplayAlert("View Staff", "View Staff", "OK");
+            //await Shell.Current.GoToAsync("StaffList");
 
             }
             private void ViewHRToolsClicked(object sender, EventArgs e)
