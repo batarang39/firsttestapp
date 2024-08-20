@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="firsttestapp.UpdateEmployee"
+             Title="UpdateEmployee">
+    <ContentPage.Content>
+        <Frame BackgroundColor="#F5F5DC" Padding="10" Margin="20">
+            <StackLayout>
+                <!-- Input Fields for Updating Employee Details -->
+                <Entry Placeholder="First Name" x:Name="FirstNameEntry"/>
+                <Entry Placeholder="Surname" x:Name="SurnameEntry"/>
+                <Entry Placeholder="Phone" x:Name="PhoneEntry"/>
+                <Entry Placeholder="Department" x:Name="DepartmentEntry"/>
+                <Entry Placeholder="Street" x:Name="StreetEntry"/>
+                <Entry Placeholder="City" x:Name="CityEntry"/>
+                <Entry Placeholder="State" x:Name="StateEntry"/>
+                <Entry Placeholder="Zip Code" x:Name="ZipCodeEntry"/>
+                <Entry Placeholder="Country" x:Name="CountryEntry"/>
+                <DatePicker x:Name="EnrollmentDatePicker" Date="{Binding EnrollmentDate}"/>
+                <!-- Update Button -->
+                <Button Text="Update" Clicked="Update_Clicked" />
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace firsttestapp
 {
@@ -52,23 +47,13 @@ namespace firsttestapp
             }
         }
 
-        //Defaults <- MVC <- Default settings control scripts
-        //Prompts of defaults:
-        //Reset Settings, Dark Theme, Light Theme, Colour Blind Mode.
-        //Prompt to say these settings may change, be overwritten
-        //OR X,y,z will change are you ok with that
         public SettingsViewModel()
         {
-            // Initialize default values
             Brightness = 0.5f;
             FontSize = 16;
             FontFamilies = new List<string> { "Arial", "Times New Roman", "Verdana" };
             SelectedFontFamily = "Arial";
         }
-
-        //TASK/COMMAND/INTERFACE 
-        //The settings defaults for:
-        //Reset Settings, Dark Theme, Light Theme, Colour Blind Mode.
 
         public event PropertyChangedEventHandler PropertyChanged;
 

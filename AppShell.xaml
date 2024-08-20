@@ -9,15 +9,22 @@
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="Main Page" />
+    
     <ShellContent
-        Title="SettingsPage"
-        ContentTemplate="{DataTemplate local:SettingsPage}"
-        Route="SettingsPage" />
-    <ShellContent
-        Title="StaffList"
+        Title="Staff List"
         ContentTemplate="{DataTemplate local:StaffList}"
         Route="StaffList" />
+
+    <ShellContent
+        Title="HR Tools"
+        ContentTemplate="{DataTemplate local:HRToolsPage}"
+        Route="HRToolsPage" />
+    
+    <ShellContent
+        Title="Settings Page"
+        ContentTemplate="{DataTemplate local:SettingsPage}"
+        Route="SettingsPage" />
 
 </Shell>
 

@@ -20,46 +20,8 @@
     <ScrollView>
         <VerticalStackLayout>
         <Label Text="Settings Page" />
-        <!--<Label
-            x:Name="rotationLabel"
-            Text="Brightness"
-            Rotation="{Binding Source={x:Reference slider},Path=Value}"
-            HorizontalOptions="Center"
-            />-->
-        <!--<Slider
-            x:Name="slider"
-            Minimum="0"
-            Maximum="360"
-            Value="0"
-            HorizontalOptions="Center"
-            />
                 
-        <Label
-            x:Name="displayLabel"
-            
-            Text="{Binding Source={x:Reference slider},
-            Path=Value,
-            StringFormat='the slider value is {0:0f}'}"
-            
-            HorizontalOptions="Center"
-            />
-            <TableView Intent="Settings">
-                <TableRoot>
-                    <TableSection>
-                        <SwitchCell Text="some"
-                                    On="False"
-                                   />
-                    </TableSection>
-                </TableRoot>
-            </TableView>
-
-        <Label
-            x:Name="_rotationLabel"
-            Text="Font Size"
-            Rotation="{Binding Source={x:Reference _stepper},Path=Value}"
-            HorizontalOptions="Center"-->
-            <!--/>-->
-        <Stepper
+            <Stepper
             x:Name="_stepper"
             Minimum="0"
             Maximum="360"
@@ -69,26 +31,9 @@
 
             <Label
             x:Name="_displayLabel"
-
             Text="{Binding Source={x:Reference _stepper},
             Path=Value,
-            StringFormat='the slider value is {0:0f}'}" />
-
-            <HorizontalStackLayout 
-                HorizontalOptions="Center"
-                Margin="10,10,10,10">
-        <!--<Button
-            x:Name="saving"
-            Text="Save"
-            Clicked="SavePreferences"
-            class="button"
-            />
-                <Button
-            x:Name="Apply"
-            Text="Apply"
-            Clicked="ApplyPreferences"
-            class="button"/>-->
-            </HorizontalStackLayout>
+            StringFormat='the fonts size is {0:0}'}" />
 
             <Label Text="Theme" FontAttributes="Bold"/>
             <Picker x:Name="ThemePicker">
@@ -96,30 +41,15 @@
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Light</x:String>
                         <x:String>Dark</x:String>
+                        <x:String>High Contrast</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-                    <!--<Button
-    x:Name="setFont"
-    Text="set font"
-    Clicked="setfont"
-    class="button"  />-->
-                    <Label >ENTER YOUR NAME</Label>
-            <Entry  x:Name="NameEntry"></Entry>
-            <Label >Change Theme</Label>
-            <Switch x:Name="togTheme"  
-                    Toggled="OnThemeSwitchToggled"
-                    BackgroundColor="DimGrey" />
+                        <Label >Change Theme</Label>
+                        <Switch x:Name="togTheme"  
+                                Toggled="OnThemeSwitchToggled"
+                                HorizontalOptions="Start" />
 
-            <Label >ENTER YOUR AGE</Label>
-            <Entry  x:Name="AgeEntry"></Entry>
-
-            <!--Age to be a birthday year/Confirm DOB VS text entry input-->
-
-            <Label >ENTER SOME NEW DATA</Label>
-            <Entry  x:Name="someEntry"></Entry>
-
-            <!-- Brightness Slider -->
             <Label Text="Brightness" />
             <Slider x:Name="brightnessSlider"
                     Minimum="0"
@@ -128,7 +58,6 @@
                     Grid.Row="5"
                     Grid.Column="1"/>
 
-            <!-- Font Size Slider -->
             <Label Text="Font Size"  />
             <Slider x:Name="fontSizeSlider"
                     Minimum="10"
@@ -137,7 +66,6 @@
                     Grid.Row="7"
                     Grid.Column="1" />
 
-            <!-- Font Family Picker -->
             <Label Text="Font Family" />
             <Picker x:Name="fontFamilyPicker"
                     ItemsSource="{Binding FontFamilies}"
@@ -145,13 +73,11 @@
                     Grid.Row="9"
                     Grid.Column="1" />
 
-            <!-- Save Button -->
             <Button Grid.Row="10"
                     Grid.Column="1"
                     Clicked="SaveSettings_Clicked"
-                    Text="SAVE USER SETTINGS"/>
-
-
+                    Text="SAVE USER SETTINGS"
+                    class="button"/>
         </VerticalStackLayout>
 </ScrollView>
 </ContentPage>
