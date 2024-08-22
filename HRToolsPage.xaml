@@ -3,17 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="firsttestapp.HRToolsPage"
              Title="HRToolsPage">
-    <VerticalStackLayout>
-        <Label 
+
+    <ScrollView>
+        <Grid>
+            <Image Source="mobilewallpaper.png" />
+            <VerticalStackLayout>
+
+                <Label 
             Text="HR Tools"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        
-        <Label 
-            Text="this is a test page were other 
-            feature to be added in the future"
+
+                <Label 
+            Text="this is a test page were other feature to be added in the future"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        
-    </VerticalStackLayout>
+
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>

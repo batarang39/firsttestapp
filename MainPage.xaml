@@ -12,7 +12,7 @@
             <Setter Property="HeightRequest" Value="75"  />
             <Setter Property="WidthRequest" Value="250"  />
             <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Margin" Value="50,15,50,15"/>
+            <Setter Property="Margin" Value="50,15,50,25"/>
             <Setter Property="HorizontalOptions" Value="Center"/>
         </Style>
         <Style Class="Header" TargetType="Label">
@@ -25,9 +25,9 @@
     
         <ScrollView>
         <Grid>
-        <Image Source="dotnet_bot.png" 
+        <Image Source="mobilewallpaper.png" 
       HorizontalOptions="Center"
-      WidthRequest="550"
+      
       />
             <VerticalStackLayout class="button">
                 
@@ -38,11 +38,11 @@
                     Margin="0,25,10,50"
                 />
 
-                <!--<Label
+                <Label
                 x:Name="dashboardLabel"
                 Text="Dashboard"
                 HorizontalOptions="Center"
-                class="Header"/>-->
+                class="Header"/>
 
                 <Button
                 x:Name="ViewStaff"

@@ -15,13 +15,15 @@
         </Style>
 
     </ContentPage.Resources>
-    
-    
+
+
     <ScrollView>
-        <VerticalStackLayout>
-        <Label Text="Settings Page" />
-                
-            <Stepper
+        <Grid>
+            <Image Source="mobilewallpaper.png" />
+            <VerticalStackLayout>
+                <Label Text="Settings Page" />
+
+                <Stepper
             x:Name="_stepper"
             Minimum="0"
             Maximum="360"
@@ -29,55 +31,56 @@
             HorizontalOptions="Center"
             />
 
-            <Label
+                <Label
             x:Name="_displayLabel"
             Text="{Binding Source={x:Reference _stepper},
             Path=Value,
             StringFormat='the fonts size is {0:0}'}" />
 
-            <Label Text="Theme" FontAttributes="Bold"/>
-            <Picker x:Name="ThemePicker">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Light</x:String>
-                        <x:String>Dark</x:String>
-                        <x:String>High Contrast</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-                        <Label >Change Theme</Label>
-                        <Switch x:Name="togTheme"  
+                <Label Text="Theme" FontAttributes="Bold"/>
+                <Picker x:Name="ThemePicker">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Light</x:String>
+                            <x:String>Dark</x:String>
+                            <x:String>High Contrast</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <Label >Change Theme</Label>
+                <Switch x:Name="togTheme"  
                                 Toggled="OnThemeSwitchToggled"
                                 HorizontalOptions="Start" />
 
-            <Label Text="Brightness" />
-            <Slider x:Name="brightnessSlider"
+                <Label Text="Brightness" />
+                <Slider x:Name="brightnessSlider"
                     Minimum="0"
                     Maximum="1"
                     Value="{Binding Brightness}"
                     Grid.Row="5"
                     Grid.Column="1"/>
 
-            <Label Text="Font Size"  />
-            <Slider x:Name="fontSizeSlider"
+                <Label Text="Font Size"  />
+                <Slider x:Name="fontSizeSlider"
                     Minimum="10"
                     Maximum="30"
                     Value="{Binding FontSize}"
                     Grid.Row="7"
                     Grid.Column="1" />
 
-            <Label Text="Font Family" />
-            <Picker x:Name="fontFamilyPicker"
+                <Label Text="Font Family" />
+                <Picker x:Name="fontFamilyPicker"
                     ItemsSource="{Binding FontFamilies}"
                     SelectedItem="{Binding SelectedFontFamily}"
                     Grid.Row="9"
                     Grid.Column="1" />
 
-            <Button Grid.Row="10"
+                <Button Grid.Row="10"
                     Grid.Column="1"
                     Clicked="SaveSettings_Clicked"
                     Text="SAVE USER SETTINGS"
                     class="button"/>
-        </VerticalStackLayout>
-</ScrollView>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
 </ContentPage>
