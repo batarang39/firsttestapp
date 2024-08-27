@@ -25,11 +25,11 @@
     
         <ScrollView>
         <Grid>
-        <Image Source="mobilewallpaper.png" 
-      HorizontalOptions="Center"
-      
+        <Image Source="mobilewallpaper.png"
+             HeightRequest="1000"
+               WidthRequest="10000"
       />
-            <VerticalStackLayout class="button">
+            <VerticalStackLayout>
                 
                 <Image
                 Source="roilogo.png"
