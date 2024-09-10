@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="firsttestapp.EmployeeDetails"
-             Title="EmployeeDetails">
+             Title="Employee Details">
  
-        <StackLayout>
-            <Frame BackgroundColor="#F5F5DC" Padding="10" Margin="20">
+        <ScrollView BackgroundColor="{StaticResource Primary}">
+            <Frame BackgroundColor="{StaticResource Secondary}" Padding="10" Margin="20">
                 <StackLayout>
                     <!-- Display Student Details Here -->
                     <Label Text="{Binding FirstName}" />
@@ -22,5 +22,5 @@
                     <!-- Add any other details you want to display -->
                 </StackLayout>
             </Frame>
-        </StackLayout>
+        </ScrollView>
 </ContentPage>

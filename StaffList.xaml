@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="firsttestapp.StaffList">
-             
+             x:Class="firsttestapp.StaffList"
+             Title="Staff List" >
 
     <ScrollView BackgroundColor="{StaticResource Primary}">
         <Frame BackgroundColor="{StaticResource Secondary}" Padding="10" Margin="20">
             <StackLayout>
-                <Label Text="Staff List" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0, 20"/>
 
                 <Entry Placeholder="First Name" x:Name="FirstNameEntry"/>
                 <Entry Placeholder="Surname" x:Name="SurnameEntry"/>
